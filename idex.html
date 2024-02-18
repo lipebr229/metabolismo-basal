@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Metabolismo Basal</title>
+    <script>
+        function calcular() {
+            var peso = document.getElementById('peso').value;
+            var altura = document.getElementById('altura').value;
+            var idade = document.getElementById('idade').value;
+            var genero = document.getElementById('genero').value;
+            var resultado;
+
+            if(genero == 'masculino') {
+                resultado = 66 + (13.7 * peso) + (5.0 * altura) - (6.8 * idade);
+            } else {
+           
+            }
+
+            document.getElementById('resultado').innerHTML = "Seu metabolismo basal é " + resultado.toFixed(2) + " calorias por dia.";
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculadora de Metabolismo Basal</h2>
+    <label>Peso (kg):</label><br>
+    <input type="number" id="peso"><br>
+    <label>Altura (cm):</label><br>
+    <input type="number" id="altura"><br>
+    <label>Idade (anos):</label><br>
+    <input type="number" id="idade"><br>
+    <label></label><br>
+    <select id="genero">
+        <option value="masculino"></option>
+    </select><br>
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+</body>
+</html>
